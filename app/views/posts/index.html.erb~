@@ -1,6 +1,6 @@
 <h1>Posts:</h1>
 
-<h3>What are you doing man?</h2>
+<h2>What are you doing man?</h2>
 <% form_for(@post) do |f| %>
   <%= f.error_messages %>
 
