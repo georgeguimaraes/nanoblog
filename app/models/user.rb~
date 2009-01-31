@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     #
     def self.encrypt(password, salt)
       return nil if password.blank? || salt.blank?
-      Digest::SHA1.hexdigest(password + 'nanoblog' + salt)
+      Digest::SHA1.hexdigest(password + 'starter' + salt)
     end
 
     # Método que gera uma string aleatória com o tamanho enviado.
