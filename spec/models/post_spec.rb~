@@ -14,8 +14,7 @@ describe Post do
 
   it "should be shorter than 140 chars" do
     post = Post.new
-    post.body = "a" * 150
-    post.save.should be_false
+    post.body = 149.times 
   end
   
 end

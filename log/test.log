@@ -1,0 +1,431 @@
+  [4;36;1mSQL (373.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (239.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (629.8ms)[0m   [0;1mCREATE DATABASE `nanoblog_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (44.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (552.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (365.6ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (20.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (28.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090131204304)
+  [4;35;1mSQL (49.5ms)[0m   [0mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (11.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090131204304')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (138.2ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `posts`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#destroy (for 0.0.0.0 at 2009-01-31 19:01:25) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/posts
+Completed in 136ms (DB: 7) | 302 Found [http://test.host/posts/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#destroy (for 0.0.0.0 at 2009-01-31 19:01:25) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/posts
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/posts/37]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:01:25) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/posts/1]
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:01:25) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://test.host/posts/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:01:26) [PUT]
+  Parameters: {"post"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://test.host/posts/37?post%5Bthese%5D=params]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:01:26) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to #[Post:0x3f94a7c12ad4 @name="Post_1006"]
+Completed in 5ms (DB: 0) | 302 Found [http://test.host/posts/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:01:26) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to #[Post:0x3f94a7be6d58 @name="Post_1007"]
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/posts/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:01:26) [PUT]
+  Parameters: {"post"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/posts/37?post%5Bthese%5D=params]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-01-31 19:01:26) [POST]
+  Parameters: {"post"=>{}}
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/posts?]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-01-31 19:01:26) [POST]
+  Parameters: {"post"=>{"these"=>"params"}}
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/posts?post%5Bthese%5D=params]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-01-31 19:01:26) [POST]
+  Parameters: {"post"=>{}}
+Redirected to #[Post:0x3f94a7b66d24 @name="Post_1011"]
+Completed in 4ms (DB: 1) | 302 Found [http://test.host/posts?]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-01-31 19:01:26) [POST]
+  Parameters: {"post"=>{"these"=>"params"}}
+Redirected to #[Post:0x3f94a7b53ee0 @name="Post_1012"]
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/posts?post%5Bthese%5D=params]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#edit (for 0.0.0.0 at 2009-01-31 19:01:26) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 2ms (View: 2, DB: 1) | 200 OK [http://test.host/posts/37/edit]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#new (for 0.0.0.0 at 2009-01-31 19:01:26) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/posts/new]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#show (for 0.0.0.0 at 2009-01-31 19:01:26) [GET]
+  Parameters: {"id"=>"37"}
+Completed in 2ms (View: 0, DB: 1) | 200 OK [http://test.host/posts/37]
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#show (for 0.0.0.0 at 2009-01-31 19:01:26) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://test.host/posts/37]
+  [4;35;1mSQL (1.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#index (for 0.0.0.0 at 2009-01-31 19:01:26) [GET]
+Completed in 2ms (View: 0, DB: 2) | 200 OK [http://test.host/posts]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#index (for 0.0.0.0 at 2009-01-31 19:01:26) [GET]
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/posts]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Columns (18.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering /posts/show.html.erb
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+Rendering /posts/edit.html.erb
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+Rendering /posts/new.html.erb
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+Rendering /posts/index.html.erb
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Columns (19.2ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Create (142.4ms)[0m   [0;1mINSERT INTO `posts` (`updated_at`, `body`, `created_at`) VALUES('2009-01-31 21:08:10', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '2009-01-31 21:08:10')[0m
+  [4;35;1mSQL (58.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Columns (436.7ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#destroy (for 0.0.0.0 at 2009-01-31 19:13:05) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/posts
+Completed in 152ms (DB: 10) | 302 Found [http://test.host/posts/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#destroy (for 0.0.0.0 at 2009-01-31 19:13:05) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/posts
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/posts/37]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:13:05) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/posts/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:13:05) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://test.host/posts/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:13:05) [PUT]
+  Parameters: {"post"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://test.host/posts/37?post%5Bthese%5D=params]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:13:05) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to #[Post:0x3f83d0b4ce98 @name="Post_1006"]
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/posts/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:13:05) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to #[Post:0x3f83d0b20cd0 @name="Post_1007"]
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/posts/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-01-31 19:13:05) [PUT]
+  Parameters: {"post"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/posts/37?post%5Bthese%5D=params]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-01-31 19:13:05) [POST]
+  Parameters: {"post"=>{}}
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/posts?]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-01-31 19:13:05) [POST]
+  Parameters: {"post"=>{"these"=>"params"}}
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/posts?post%5Bthese%5D=params]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-01-31 19:13:05) [POST]
+  Parameters: {"post"=>{}}
+Redirected to #[Post:0x3f83d0a9ffcc @name="Post_1011"]
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/posts?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-01-31 19:13:05) [POST]
+  Parameters: {"post"=>{"these"=>"params"}}
+Redirected to #[Post:0x3f83d0a8b70c @name="Post_1012"]
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/posts?post%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#edit (for 0.0.0.0 at 2009-01-31 19:13:05) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/posts/37/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#new (for 0.0.0.0 at 2009-01-31 19:13:05) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/posts/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#show (for 0.0.0.0 at 2009-01-31 19:13:05) [GET]
+  Parameters: {"id"=>"37"}
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/posts/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#show (for 0.0.0.0 at 2009-01-31 19:13:05) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/posts/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#index (for 0.0.0.0 at 2009-01-31 19:13:05) [GET]
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/posts]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing PostsController#index (for 0.0.0.0 at 2009-01-31 19:13:05) [GET]
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 2ms (View: 1, DB: 1) | 200 OK [http://test.host/posts]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Columns (18.9ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering /posts/show.html.erb
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+Rendering /posts/edit.html.erb
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+Rendering /posts/new.html.erb
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+Rendering /posts/index.html.erb
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
