@@ -1,0 +1,3 @@
+<li>
+  <%= h(post.body) %>, posted at
+</li>

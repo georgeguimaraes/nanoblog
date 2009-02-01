@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :email, :password
   validates_presence_of :email
   
+  has_many :posts
+  
   def password
     @password || ''
   end
@@ -36,6 +38,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  # Método de autenticação que recebe o password e o encripta comparando
+  # com o password criptogragado no banco de dados. Retorna true ou false.
+  #
+  def authenticate(auth_password)
+    User.encrypt(auth_password, self.salt) == self.hashed_password
+  end
+
   protected
     # Método que recebe um password e um salt e retorna o password criptografado com SHA1.
     #
@@ -54,13 +63,6 @@ class User < ActiveRecord::Base
       1.upto(length) { |i| newpass << chars.rand }
 
       return newpass
-    end
-    
-    # Método de autenticação que recebe o password e o encripta comparando
-    # com o password criptogragado no banco de dados. Retorna true ou false.
-    #
-    def authenticate(auth_password)
-      User.encrypt(auth_password, self.salt) == self.hashed_password
     end
 
 end

@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
   
   # GET /users/:id
-  def index
-  
+  def show
+    @posts = @current_user.posts
   end
 end

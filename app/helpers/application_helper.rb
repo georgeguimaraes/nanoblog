@@ -5,7 +5,7 @@ module ApplicationHelper
     if flash[:notice]
       "<p style=\"color: green\">#{flash[:notice]}</p>"
     elsif flash[:error]
-      "<p style=\"color: red\">#(flash[:error]}</p>" 
+      "<p style=\"color: red\">#{flash[:error]}</p>" 
     end
   end
 

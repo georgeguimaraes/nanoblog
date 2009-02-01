@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :posts
-  map.resources :users, :only => [ :show, :new, :create ]
 
+  map.resources :users, :only => [ :show, :new, :create ] do |users|
+    users.resources :posts
+  end
 
   map.with_options(:controller => 'user_sessions') do |m|
     m.new_user_session     '/account/login',   :action => 'new',     :conditions => { :method => :get }

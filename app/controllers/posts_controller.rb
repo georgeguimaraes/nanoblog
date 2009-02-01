@@ -41,15 +41,19 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.xml
   def create
+    #TODO dar uma olhada nisso aqui depois
+#    @post = @current_user.posts.build(params[:post])
     @post = Post.new(params[:post])
+    @post.user_id = @current_user.id
 
     respond_to do |format|
       if @post.save
         flash[:notice] = 'Post was successfully created.'
-        format.html { redirect_to(posts_path) }
+        format.html { redirect_to(@current_user) }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
-        format.html { render :action => "new" }
+        @posts = @current_user.posts
+        format.html { render :template => "users/show" }
         format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
       end
     end

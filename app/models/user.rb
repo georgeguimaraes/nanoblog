@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :email, :password
   validates_presence_of :email
   
+  has_many :posts, :order => "created_at DESC"
+  
   def password
     @password || ''
   end
