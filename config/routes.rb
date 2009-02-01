@@ -2,6 +2,14 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts
   map.resources :users, :only => [ :show, :new, :create ]
 
+
+  map.with_options(:controller => 'user_sessions') do |m|
+    m.new_user_session     '/account/login',   :action => 'new',     :conditions => { :method => :get }
+    m.user_session         '/account/session', :action => 'create',  :conditions => { :method => :post }
+    m.connect              '/account/session', :action => 'destroy', :conditions => { :method => :delete }
+    m.destroy_user_session '/account/logout',  :action => 'destroy', :conditions => { :method => :get }
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
