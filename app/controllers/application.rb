@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   layout 'default'
+  
+  before_filter :find_current_user
+
+  protected
+    def find_current_user
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
 end

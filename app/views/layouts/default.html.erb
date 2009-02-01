@@ -9,10 +9,11 @@
 </head>
 <body>
 
-<% if !session[:user_id] %>
+<% if !@current_user %>
   <%= link_to('SignUp', new_user_path) + "|" %> 
   <%= link_to('Login', new_user_session_path) %>
 <% else %>  
+  <%= @current_user.email + '|' %>
   <%= link_to('Logout', destroy_user_session_path) %>
 <% end%>
 
