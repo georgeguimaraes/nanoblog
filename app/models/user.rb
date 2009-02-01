@@ -3,6 +3,7 @@ require 'digest/sha1'
 class User < ActiveRecord::Base
   validates_confirmation_of :email, :password
   validates_presence_of :email
+  validates_uniqueness_of :email
   
   has_many :posts, :order => "created_at DESC"
   

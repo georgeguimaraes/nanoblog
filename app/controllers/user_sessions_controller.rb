@@ -36,7 +36,7 @@ class UserSessionsController < ApplicationController
     flash[:notice] = "Logout done. Come back later! =)" if session[:user_id]
     session[:user_id] = nil
     
-    redirect_to posts_path
+    redirect_to new_user_session_path
   end
   
 end

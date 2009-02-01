@@ -13,12 +13,11 @@ class UsersController < ApplicationController
       flash[:notice] = 'User was successfully created.'
       redirect_to(@user)
     else
-      format.html { render :action => "new" }
+      render :action => "new"
     end
   end
   
   # GET /users/:id
   def show
-    @posts = @current_user.posts
   end
 end
