@@ -1,0 +1,15 @@
+class FollowersController < ApplicationController
+  
+  def create
+    @followed = User.find(params[:user_id])
+    @followed.followers << @current_user
+    redirect_to @followed
+  end
+  
+  def destroy
+    @followed = User.find(params[:user_id])
+    @current_users.followeds.delete @followed
+    redirect_to @followed
+  end
+  
+end

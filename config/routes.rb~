@@ -1,9 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
 
+  map.root :controller => 'user_sessions', :action => 'new'
+
   map.user_home '/home', :controller => 'users', :action => 'home'
 
   map.resources :users, :only => [ :show, :new, :create ] do |users|
     users.resources :posts
+    users.resource :followers, :only => [:create, :destroy]
   end
 
   map.with_options(:controller => 'user_sessions') do |m|

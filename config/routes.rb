@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users, :only => [ :show, :new, :create ] do |users|
     users.resources :posts
+    users.resources :followers, :only => [:create, :destroy]
   end
 
   map.with_options(:controller => 'user_sessions') do |m|
