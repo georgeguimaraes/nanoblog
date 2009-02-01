@@ -21,4 +21,12 @@ class ApplicationController < ActionController::Base
     def find_current_user
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
+    
+    def required_login
+      if session[:user_id].nil?
+        session[:return_to] = request.request_uri
+        flash[:error] = "You need to login to do this."
+        redirect_to new_user_session_path 
+      end
+    end
 end

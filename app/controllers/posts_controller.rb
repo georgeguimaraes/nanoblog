@@ -1,26 +1,5 @@
 class PostsController < ApplicationController
-  # GET /posts
-  # GET /posts.xml
-  def index
-    @posts = Post.find(:all, :order => 'created_at DESC')
-    @post = Post.new
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @posts }
-    end
-  end
-
-  # GET /posts/1
-  # GET /posts/1.xml
-  def show
-    @post = Post.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @post }
-    end
-  end
+  before_filter :required_login
 
   # GET /posts/new
   # GET /posts/new.xml
@@ -31,11 +10,6 @@ class PostsController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @post }
     end
-  end
-
-  # GET /posts/1/edit
-  def edit
-    @post = Post.find(params[:id])
   end
 
   # POST /posts
@@ -54,23 +28,6 @@ class PostsController < ApplicationController
       else
         @posts = @current_user.posts
         format.html { render :template => "users/home" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /posts/1
-  # PUT /posts/1.xml
-  def update
-    @post = Post.find(params[:id])
-
-    respond_to do |format|
-      if @post.update_attributes(params[:post])
-        flash[:notice] = 'Post was successfully updated.'
-        format.html { redirect_to(@post) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
         format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
       end
     end

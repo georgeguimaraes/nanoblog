@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :required_login, :only => :home
+  
   # GET /users/new
   def new
     @user = User.new
@@ -25,7 +27,6 @@ class UsersController < ApplicationController
   
   # GET /home
   def home
-#    @followeds_posts = @current_user.followeds_posts
   end
   
 end

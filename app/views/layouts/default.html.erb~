@@ -13,7 +13,7 @@
   <%= link_to('SignUp', new_user_path) + "|" %> 
   <%= link_to('Login', new_user_session_path) %>
 <% else %>  
-  <%= @current_user.email | %>
+  <%= link_to @current_user.email, user_home_path  + '|' %>
   <%= link_to('Logout', destroy_user_session_path) %>
 <% end%>
 

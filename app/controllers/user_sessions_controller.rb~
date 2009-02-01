@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  before_filter :required_login, :only => :destroy
+  
   # - GET /account/login
   #
   def new
@@ -12,7 +14,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = 'Login successfull'
       session[:user_id] = @user.id
 
-      redirect_to(@user)
+      redirect_to(user_home_path)
     else
       @user = User.new(params[:user])
 
