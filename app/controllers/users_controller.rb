@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = 'User was successfully created.'
-      redirect_to(@user)
+      redirect_to(user_home_path)
     else
       render :action => "new"
     end
@@ -20,11 +20,12 @@ class UsersController < ApplicationController
   
   # GET /users/:id
   def show
+    @user = User.find(params[:id])
   end
   
   # GET /home
   def home
-    @followeds_posts = @current_user.followeds_posts
+#    @followeds_posts = @current_user.followeds_posts
   end
   
 end

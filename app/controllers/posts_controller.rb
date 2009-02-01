@@ -53,7 +53,7 @@ class PostsController < ApplicationController
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
         @posts = @current_user.posts
-        format.html { render :template => "users/show" }
+        format.html { render :template => "users/home" }
         format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
       end
     end

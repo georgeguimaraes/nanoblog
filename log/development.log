@@ -5714,3 +5714,1216 @@ Rendered posts/_post (1.7ms)
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
 Rendered posts/_post (1.6ms)
 Completed in 206ms (View: 80, DB: 9) | 200 OK [http://localhost/home]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-01 16:43:42) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Redirected to /account/login
+Completed in 35ms (DB: 3) | 302 Found [http://localhost/account/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-01 16:43:42) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 62ms (View: 31, DB: 2) | 200 OK [http://localhost/account/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:43:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/default
+Rendering users/show
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.posts) on line #4 of app/views/users/show.html.erb:
+1: <h1>My page</h1>
+2: 
+3: 
+4: <% unless @current_user.posts.empty? %>
+5:   <ul>
+6:   <%= render :partial => @current_user.posts %>
+7:   </ul>
+
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/views/users/show.html.erb&line=4&column=1">app/views/users/show.html.erb:4</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb&line=73&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=256&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=367&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=254&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1174&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=896&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=51&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb&line=8&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=51&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=868&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=51&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb&line=8&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=51&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1248&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1254&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=617&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=610&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/benchmark.rb&line=293&column=1">/usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb&line=136&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=13&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb&line=34&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb&line=8&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=12&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=606&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb&line=134&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=392&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=183&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=110&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=123&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=132&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=103&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=74&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/httpserver.rb&line=104&column=1">/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/httpserver.rb&line=65&column=1">/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=173&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=162&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=162&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=95&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=92&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=92&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=23&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=82&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=60&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb&line=66&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=521&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb&line=49&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/script/server&line=3&column=1">script/server:3</a>
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (93.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.8ms)
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-01 16:44:05) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 245ms (View: 23, DB: 4) | 200 OK [http://localhost/account/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-01 16:45:52) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (15.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 89ms (View: 23, DB: 16) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-02-01 16:46:09) [POST]
+  Parameters: {"user"=>{"password"=>"12345", "email"=>"george.guimaraes@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'george.guimaraes@gmail.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 63ms (View: 12, DB: 3) | 200 OK [http://localhost/account/session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-02-01 16:46:13) [POST]
+  Parameters: {"user"=>{"password"=>"123456", "email"=>"george.guimaraes@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (5.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'george.guimaraes@gmail.com') LIMIT 1[0m
+Redirected to /home
+Completed in 63ms (DB: 8) | 302 Found [http://localhost/account/session]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:46:14) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;35;1mJoin Table Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `followers`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 4 ) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 1) ORDER BY created_at DESC[0m
+  [4;36;1mPost Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 4) ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (49.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.7ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (6.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.7ms)
+Completed in 212ms (View: 95, DB: 10) | 200 OK [http://localhost/home]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-01 16:46:23) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Redirected to /account/login
+Completed in 31ms (DB: 5) | 302 Found [http://localhost/account/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-01 16:46:23) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (7.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 67ms (View: 25, DB: 8) | 200 OK [http://localhost/account/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-02-01 16:46:27) [POST]
+  Parameters: {"user"=>{"password"=>"", "email"=>""}, "commit"=>"Login", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 49ms (View: 13, DB: 2) | 200 OK [http://localhost/account/session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-02-01 16:46:31) [POST]
+  Parameters: {"user"=>{"password"=>"", "email"=>"george.guimaraes@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962"}
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 238ms (View: 14, DB: 3) | 200 OK [http://localhost/account/session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-02-01 16:46:38) [POST]
+  Parameters: {"user"=>{"password"=>"123456", "email"=>"george.guimaraes@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'george.guimaraes@gmail.com') LIMIT 1[0m
+Redirected to /home
+Completed in 63ms (DB: 10) | 302 Found [http://localhost/account/session]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:46:38) [GET]
+  [4;35;1mSQL (1.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (12.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;35;1mJoin Table Columns (9.9ms)[0m   [0mSHOW FIELDS FROM `followers`[0m
+  [4;36;1mUser Load (6.2ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 4 ) [0m
+  [4;35;1mPost Load (1.9ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 1) ORDER BY created_at DESC[0m
+  [4;36;1mPost Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (7.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 4) ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (9.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.6ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.7ms)
+Completed in 205ms (View: 64, DB: 51) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:47:16) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>""}, "user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;36;1mPost Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;35;1mSQL (96.8ms)[0m   [0mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 4) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 4) ORDER BY created_at DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (6.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.8ms)
+Completed in 353ms (View: 30, DB: 105) | 200 OK [http://localhost/users/4/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:47:20) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>""}, "user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 4) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 4) ORDER BY created_at DESC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.7ms)
+Completed in 92ms (View: 28, DB: 9) | 200 OK [http://localhost/users/4/posts]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-01 16:47:39) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Redirected to /account/login
+Completed in 25ms (DB: 3) | 302 Found [http://localhost/account/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-01 16:47:39) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 54ms (View: 17, DB: 2) | 200 OK [http://localhost/account/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-02-01 16:47:41) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (9.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 87ms (View: 37, DB: 10) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-02-01 16:48:01) [POST]
+  Parameters: {"user"=>{"email_confirmation"=>"jose.valim@gmail.com", "password_confirmation"=>"123456", "password"=>"123456", "email"=>"jose.valim@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (12.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (68.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'jose.valim@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (37.8ms)[0m   [0mINSERT INTO `users` (`salt`, `updated_at`, `hashed_password`, `email`, `created_at`) VALUES('DzgZaRwyl4', '2009-02-01 18:48:01', '5a52699cdad5adeafb3a88a8ce6a3dd698df366a', 'jose.valim@gmail.com', '2009-02-01 18:48:01')[0m
+  [4;36;1mSQL (52.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<User:0x7f8df1d515c0>
+Completed in 270ms (DB: 206) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:48:01) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mSQL (1.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 5) [0m
+Completed in 224ms (View: 30, DB: 4) | 200 OK [http://localhost/users/5]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-01 16:48:39) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Redirected to /account/login
+Completed in 32ms (DB: 3) | 302 Found [http://localhost/account/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-01 16:48:39) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 70ms (View: 16, DB: 2) | 200 OK [http://localhost/account/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-02-01 16:48:41) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 50ms (View: 17, DB: 2) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-02-01 16:49:03) [POST]
+  Parameters: {"user"=>{"email_confirmation"=>"marcelo.park@gmail.com", "password_confirmation"=>"123456", "password"=>"123456", "email"=>"marcelo.park@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'marcelo.park@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO `users` (`salt`, `updated_at`, `hashed_password`, `email`, `created_at`) VALUES('PJc3lEJfaa', '2009-02-01 18:49:03', '4e44cc86d12db4527cfefbc9dd631bf7be28b35f', 'marcelo.park@gmail.com', '2009-02-01 18:49:03')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+Redirected to /home
+Completed in 82ms (DB: 9) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:49:03) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mJoin Table Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `followers`[0m
+  [4;35;1mUser Load (17.2ms)[0m   [0mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 6 ) [0m
+  [4;36;1mPost Load (17.4ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 109ms (View: 20, DB: 40) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:49:18) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>"estou escrevendo a proposta"}, "user_id"=>"6"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (37.6ms)[0m   [0;1mINSERT INTO `posts` (`updated_at`, `body`, `user_id`, `created_at`) VALUES('2009-02-01 18:49:18', 'estou escrevendo a proposta', 6, '2009-02-01 18:49:18')[0m
+  [4;35;1mSQL (34.5ms)[0m   [0mCOMMIT[0m
+Redirected to /home
+Completed in 132ms (DB: 78) | 302 Found [http://localhost/users/6/posts]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:49:18) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mJoin Table Columns (5.7ms)[0m   [0;1mSHOW FIELDS FROM `followers`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 6 ) [0m
+  [4;36;1mPost Load (15.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;35;1mPost Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (8.3ms)
+Completed in 251ms (View: 22, DB: 27) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:49:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>"qeweqweq"}, "user_id"=>"6"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mPost Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Create (0.5ms)[0m   [0mINSERT INTO `posts` (`updated_at`, `body`, `user_id`, `created_at`) VALUES('2009-02-01 18:49:25', 'qeweqweq', 6, '2009-02-01 18:49:25')[0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to /home
+Completed in 65ms (DB: 14) | 302 Found [http://localhost/users/6/posts]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:49:25) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mJoin Table Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `followers`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 6 ) [0m
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (9.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.5ms)
+Completed in 91ms (View: 28, DB: 8) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:49:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>"klaatu barada nikto"}, "user_id"=>"6"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Create (0.5ms)[0m   [0mINSERT INTO `posts` (`updated_at`, `body`, `user_id`, `created_at`) VALUES('2009-02-01 18:49:32', 'klaatu barada nikto', 6, '2009-02-01 18:49:32')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to /home
+Completed in 77ms (DB: 10) | 302 Found [http://localhost/users/6/posts]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:49:33) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mJoin Table Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `followers`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 6 ) [0m
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;36;1mPost Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (12.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (3.4ms)
+Completed in 108ms (View: 37, DB: 14) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:50:26) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>""}, "user_id"=>"6"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 6) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (6.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.7ms)
+Completed in 122ms (View: 30, DB: 10) | 200 OK [http://localhost/users/6/posts]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:51:08) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mJoin Table Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `followers`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 6 ) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (7.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.6ms)
+Completed in 91ms (View: 29, DB: 7) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:51:09) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>""}, "user_id"=>"6"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mPost Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/default
+Rendering users/home
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.empty?) on line #15 of app/views/users/home.html.erb:
+12:   </p>
+13: <% end %>
+14: 
+15: <% unless @followeds_posts.empty? %>
+16:   <ul>
+17:   <%= render :partial => @followeds_posts %>
+18:   </ul>
+
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/views/users/home.html.erb&line=15&column=1">app/views/users/home.html.erb:15</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb&line=73&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=256&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=367&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=254&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1174&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=899&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:899:in `render_without_benchmark'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=51&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb&line=8&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=51&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/controllers/posts_controller.rb&line=56&column=1">app/controllers/posts_controller.rb:56:in `create'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=135&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:135:in `call'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=135&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:135:in `custom'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=164&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:164:in `call'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=164&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:164:in `respond'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=158&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:158:in `each'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=158&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:158:in `respond'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=107&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:107:in `respond_to'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/controllers/posts_controller.rb&line=49&column=1">app/controllers/posts_controller.rb:49:in `create'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1253&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1253&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=617&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=610&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/benchmark.rb&line=293&column=1">/usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb&line=136&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=13&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb&line=34&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb&line=8&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=12&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=606&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb&line=134&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=392&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=183&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=110&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=123&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=132&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=103&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=74&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/httpserver.rb&line=104&column=1">/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/httpserver.rb&line=65&column=1">/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=173&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=162&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=162&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=95&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=92&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=92&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=23&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=82&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=60&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb&line=66&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=521&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb&line=49&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/script/server&line=3&column=1">script/server:3</a>
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (83.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (3.7ms)
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:52:57) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mJoin Table Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `followers`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 6 ) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (7.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.6ms)
+Completed in 99ms (View: 28, DB: 9) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:53:10) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>""}, "user_id"=>"6"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/default
+Rendering users/home
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.empty?) on line #15 of app/views/users/home.html.erb:
+12:   </p>
+13: <% end %>
+14: 
+15: <% unless @followeds_posts.empty? %>
+16:   <ul>
+17:   <%= render :partial => @followeds_posts %>
+18:   </ul>
+
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/views/users/home.html.erb&line=15&column=1">app/views/users/home.html.erb:15</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb&line=73&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=256&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=367&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=254&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1174&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=899&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:899:in `render_without_benchmark'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=51&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb&line=8&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=51&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/controllers/posts_controller.rb&line=56&column=1">app/controllers/posts_controller.rb:56:in `create'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=135&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:135:in `call'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=135&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:135:in `custom'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=164&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:164:in `call'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=164&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:164:in `respond'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=158&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:158:in `each'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=158&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:158:in `respond'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb&line=107&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:107:in `respond_to'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/controllers/posts_controller.rb&line=49&column=1">app/controllers/posts_controller.rb:49:in `create'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1253&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1253&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=617&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=610&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/benchmark.rb&line=293&column=1">/usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb&line=136&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=13&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb&line=34&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb&line=8&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=12&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=606&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb&line=134&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=392&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=183&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=110&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=123&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=132&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=103&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=74&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/httpserver.rb&line=104&column=1">/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/httpserver.rb&line=65&column=1">/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=173&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=162&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=162&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=95&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=92&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=92&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=23&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=82&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=60&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb&line=66&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=521&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb&line=49&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/script/server&line=3&column=1">script/server:3</a>
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (229.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (2.3ms)
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:54:55) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>""}, "user_id"=>"6"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mPost Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;35;1mJoin Table Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `followers`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 6 ) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (6.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (3.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.6ms)
+Completed in 136ms (View: 42, DB: 10) | 200 OK [http://localhost/users/6/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-01 16:55:02) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"87c5ce4057b10f22fd078a42760b01c70952f962", "post"=>{"body"=>"fwfwef"}, "user_id"=>"6"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Create (0.5ms)[0m   [0mINSERT INTO `posts` (`updated_at`, `body`, `user_id`, `created_at`) VALUES('2009-02-01 18:55:02', 'fwfwef', 6, '2009-02-01 18:55:02')[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to /home
+Completed in 57ms (DB: 9) | 302 Found [http://localhost/users/6/posts]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:55:02) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mJoin Table Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `followers`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 6 ) [0m
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (10.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.7ms)
+Completed in 255ms (View: 56, DB: 4) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-02-01 16:55:13) [GET]
+
+
+ActionController::RoutingError (No route matches "/user/1" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:55:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (18.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;35;1mPost Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 6) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (7.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.9ms)
+Completed in 109ms (View: 44, DB: 19) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:57:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;35;1mPost Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (102.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 1) [0m
+  [4;35;1mPost Load (0.9ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 1) ORDER BY created_at DESC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (6.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (6.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.9ms)
+Completed in 382ms (View: 185, DB: 4) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:57:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (15.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=2):
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1528:in `find_one'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1511:in `find_from_ids'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:590:in `find'
+    /app/controllers/users_controller.rb:23:in `show'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (58.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.8ms)
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:57:33) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 4) [0m
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 4) ORDER BY created_at DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (10.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (1.8ms)
+Completed in 308ms (View: 55, DB: 4) | 200 OK [http://localhost/users/4]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:57:38) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (18.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mUser Load (4.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 5) [0m
+Completed in 104ms (View: 24, DB: 31) | 200 OK [http://localhost/users/5]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:57:43) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (22.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;35;1mPost Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 6) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (153.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.7ms)
+Completed in 278ms (View: 205, DB: 25) | 200 OK [http://localhost/users/6]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-01 16:57:48) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (14.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mJoin Table Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `followers`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.follower_id WHERE (`followers`.followed_id = 6 ) [0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (7.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (3.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (1.6ms)
+Completed in 128ms (View: 53, DB: 16) | 200 OK [http://localhost/home]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-01 16:58:01) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Redirected to /account/login
+Completed in 26ms (DB: 3) | 302 Found [http://localhost/account/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-01 16:58:01) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 197ms (View: 166, DB: 2) | 200 OK [http://localhost/account/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:58:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (11.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 1) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 1) ORDER BY created_at DESC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (5.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+Completed in 146ms (View: 65, DB: 13) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-01 16:58:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (12.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (10.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=2):
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1528:in `find_one'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1511:in `find_from_ids'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:590:in `find'
+    /app/controllers/users_controller.rb:23:in `show'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (222.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (2.1ms)
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+  [4;36;1mUser Load (18.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;35;1mUser Load (14.1ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (id = 2) LIMIT 1[0m

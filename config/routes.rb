@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
+  map.root :controller => 'user_sessions', :action => 'new'
+
   map.user_home '/home', :controller => 'users', :action => 'home'
 
   map.resources :users, :only => [ :show, :new, :create ] do |users|

@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         flash[:notice] = 'Post was successfully created.'
-        format.html { redirect_to(@current_user) }
+        format.html { redirect_to(user_home_path) }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
         @posts = @current_user.posts

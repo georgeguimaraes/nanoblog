@@ -12,8 +12,9 @@
   </p>
 <% end %>
 
-<% unless @followeds_posts.empty? %>
+
+<% unless @current_user.followeds_posts.empty? %>
   <ul>
-  <%= render :partial => @followeds_posts %>
+  <%= render :partial => @current_user.followeds_posts %>
   </ul>
 <% end %>

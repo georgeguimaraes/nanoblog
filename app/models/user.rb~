@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
       all_posts << followed.posts
     end
     
+    posts << self.posts
+     
     posts.flatten.sort { |post1,post2| post2.created_at <=> post1.created_at }
   end
   

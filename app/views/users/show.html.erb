@@ -1,8 +1,8 @@
-<h1>My page</h1>
+<h1>page for <%= @user.email %></h1>
 
 
-<% unless @current_user.posts.empty? %>
+<% unless @user.posts.empty? %>
   <ul>
-  <%= render :partial => @current_user.posts %>
+  <%= render :partial => @user.posts %>
   </ul>
 <% end %>
