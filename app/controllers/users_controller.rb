@@ -21,4 +21,10 @@ class UsersController < ApplicationController
   # GET /users/:id
   def show
   end
+  
+  # GET /home
+  def home
+    @followeds_posts = @current_user.followeds_posts
+  end
+  
 end

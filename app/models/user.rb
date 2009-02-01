@@ -7,6 +7,21 @@ class User < ActiveRecord::Base
   
   has_many :posts, :order => "created_at DESC"
   
+  has_and_belongs_to_many :followers, :class_name => 'User', :join_table => 'followers', :foreign_key => 'follower_id', :association_foreign_key => 'followed_id', :uniq => true
+  
+  has_and_belongs_to_many :followeds, :class_name => 'User', :join_table => 'followers', :foreign_key => 'followed_id', :association_foreign_key => 'follower_id', :uniq => true
+  
+  def followeds_posts
+    posts = self.followeds.inject([]) do |all_posts, followed|
+      all_posts << followed.posts
+    end
+    
+    posts << self.posts
+     
+    posts.flatten.sort { |post1,post2| post2.created_at <=> post1.created_at }
+  end
+  
+  
   def password
     @password || ''
   end

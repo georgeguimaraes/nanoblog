@@ -12,7 +12,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = 'Login successfull'
       session[:user_id] = @user.id
 
-      redirect_to(@user)
+      redirect_to(user_home_path)
     else
       @user = User.new(params[:user])
 
