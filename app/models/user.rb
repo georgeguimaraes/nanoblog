@@ -19,6 +19,30 @@ class User < ActiveRecord::Base
     self.hashed_password = User.encrypt(@password, self.salt)
   end
   
+  # Método que recebe um hash com os valores de e-mail e password, procura
+  # o dado e-mail no banco e o autentica, caso o password sejá válido.
+  #
+  # Retorna o usuário encontrado ou nil.
+  #
+  def self.find_and_authenticate(options)
+    return nil if options[:email].blank? || options[:password].blank?
+
+    user = User.find_by_email(options[:email])
+    
+    if user
+      user.authenticate(options[:password]) ? user : nil
+    else
+      return nil
+    end
+  end
+
+  # Método de autenticação que recebe o password e o encripta comparando
+  # com o password criptogragado no banco de dados. Retorna true ou false.
+  #
+  def authenticate(auth_password)
+    User.encrypt(auth_password, self.salt) == self.hashed_password
+  end
+
   protected
     # Método que recebe um password e um salt e retorna o password criptografado com SHA1.
     #

@@ -1,26 +1,34 @@
 class UserSessionsController < ApplicationController
-  # - GET /users/login
+  # - GET /account/login
   #
   def new
     @user = User.new
   end
 
-  # - POST /users/sessions
+  # - POST /account/session
   #
   def create
-    @user = User.find(:first, :conditions => ["email = ?", params[:user][:email]])
-    
-    if User.encrypt(params[:user][:password], @user.salt) == @user.hashed_password 
+    if @user = User.find_and_authenticate(params[:user]) 
       flash[:notice] = 'Login successfull'
       session[:user_id] = @user.id
 
       redirect_to(@user)
     else
       @user = User.new(params[:user])
-      flash[:warn] = 'Login with error'
 
+      if params[:user]
+        if params[:user][:email].blank?
+          flash[:error] = "Email can't be blank"
+        elsif params[:user][:password].blank?
+          flash[:error] = "Password can't be blank"
+        else
+          flash[:error] = "Email and password does not match"
+        end
+      end
+      
       render :action => 'new'
     end
+    
   end
 
 end
