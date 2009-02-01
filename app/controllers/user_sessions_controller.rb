@@ -30,5 +30,13 @@ class UserSessionsController < ApplicationController
     end
     
   end
-
+  
+  # DELETE /account/session
+  def destroy
+    flash[:notice] = "Logout done. Come back later! =)" if session[:user_id]
+    session[:user_id] = nil
+    
+    redirect_to posts_path
+  end
+  
 end

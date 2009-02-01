@@ -9,11 +9,14 @@
 </head>
 <body>
 
-<% if flash[:notice] %>
-  <p style="color: green"><%= flash[:notice] %></p>
-<% elsif flash[:error] %>
-  <p style="color: red"><%= flash[:error] %></p>
+<% if !session[:user_id] %>
+  <%= link_to('SignUp', new_user_path) + "|" %> 
+  <%= link_to('Login', new_user_session_path) %>
+<% else %>  
+  <%= link_to('Logout', destroy_user_session_path) %>
 <% end%>
+
+<%= show_flash_messages %>
 
 <%= yield  %>
 
