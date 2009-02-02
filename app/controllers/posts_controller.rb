@@ -2,7 +2,9 @@ class PostsController < ApplicationController
   before_filter :required_login, :except => :index
 
   def index
-    @posts = Post.find(:all, :order => "created_at DESC")
+#    @posts = Post.find(:all, :order => "created_at DESC")
+#    @posts = Post.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
+    @posts = Post.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
   end
 
   # GET /posts/new
