@@ -4,6 +4,16 @@ tmp/**/*
 config/database.yml
 db/*.sqlite3
 
+*.cache
+*.log
+*.pid
+
+doc/api
+doc/app
+doc/plugins
+
+
+
 config/initializers/mailer_config.rb
 *~
 
