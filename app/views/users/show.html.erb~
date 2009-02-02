@@ -1,4 +1,4 @@
-<h1>page for <%= @user.email %></h1>
+<h1>Page for <%= @user.email %></h1>
 
 <% if @current_user %>
   <% if @current_user.followeds.map { |u| u.id }.include? @user.id %>

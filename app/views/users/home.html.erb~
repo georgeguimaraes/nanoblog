@@ -1,7 +1,7 @@
 <h1>My page</h1>
 
 <h2>What are you doing man?</h2>
-<% form_for([@current_user, @post || Post.new]) do |f| %>
+<% remote_form_for([@current_user, @post || Post.new]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -12,8 +12,9 @@
   </p>
 <% end %>
 
-<% unless @followeds_posts.empty? %>
-  <ul>
-  <%= render :partial => @followeds_posts %>
-  </ul>
+
+<% unless @current_user.followeds_posts.empty? %>
+  <div id="posts">
+    <%= render :partial => @current_user.followeds_posts %>
+  </div>
 <% end %>

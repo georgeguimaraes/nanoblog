@@ -9,7 +9,7 @@
 <% end %>
 
 <% unless @user.posts.empty? %>
-  <ul>
-  <%= render :partial => @user.posts %>
-  </ul>
+  <div id="posts">
+    <%= render :partial => @user.posts %>
+  </div>
 <% end %>

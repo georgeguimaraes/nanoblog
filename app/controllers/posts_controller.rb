@@ -24,11 +24,13 @@ class PostsController < ApplicationController
       if @post.save
         flash[:notice] = 'Post was successfully created.'
         format.html { redirect_to(user_home_path) }
-        format.xml  { render :xml => @post, :status => :created, :location => @post }
+        format.xml  { render :xml => @post, :status => :created }
+        format.js
       else
         @posts = @current_user.posts
         format.html { render :template => "users/home" }
         format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end
