@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  before_filter :required_login
+  before_filter :required_login, :except => :index
+
+  def index
+    @posts = Post.find(:all, :order => "created_at DESC")
+  end
 
   # GET /posts/new
   # GET /posts/new.xml

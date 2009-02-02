@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :followers, :class_name => 'User', :join_table => 'followers', :foreign_key => 'followed_id', :association_foreign_key => 'follower_id', :uniq => true
   
   
+  after_create :send_new_account_notification
+  
   def followeds_posts
     posts = self.followeds.inject([]) do |all_posts, followed|
       all_posts << followed.posts
@@ -60,6 +62,11 @@ class User < ActiveRecord::Base
   #
   def authenticate(auth_password)
     User.encrypt(auth_password, self.salt) == self.hashed_password
+  end
+
+
+  def send_new_account_notification
+    Notification.deliver_new_account(self)
   end
 
   protected

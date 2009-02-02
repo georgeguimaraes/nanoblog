@@ -15,6 +15,7 @@ class UserSessionsController < ApplicationController
       session[:user_id] = @user.id
 
       redirect_to(session[:return_to] || user_home_path)
+      session[:return_to] = nil
     else
       @user = User.new(params[:user])
 
@@ -27,18 +28,18 @@ class UserSessionsController < ApplicationController
           flash[:error] = "Email and password does not match"
         end
       end
-      
+
       render :action => 'new'
     end
     
   end
-  
+
   # DELETE /account/session
   def destroy
     flash[:notice] = "Logout done. Come back later! =)" if session[:user_id]
     session[:user_id] = nil
-    
-    redirect_to new_user_session_path
+
+    redirect_to root_path
   end
   
 end

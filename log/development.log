@@ -13560,3 +13560,1566 @@ Rendering posts/create
   [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
 Rendered posts/_post (13.5ms)
 Completed in 73ms (View: 21, DB: 13) | 200 OK [http://localhost/users/1/posts]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-02 14:49:57) [GET]
+  [4;35;1mSQL (285.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2092.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1327.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Redirected to /account/login
+Completed in 16277ms (DB: 4481) | 302 Found [http://localhost/account/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-02 14:50:24) [GET]
+  [4;35;1mSQL (8.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (488.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 34570ms (View: 3852, DB: 497) | 200 OK [http://localhost/account/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-02-02 14:51:26) [GET]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (40.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 263ms (View: 71, DB: 42) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-02-02 14:51:55) [POST]
+  Parameters: {"user"=>{"email_confirmation"=>"hugo.barauna+nanoblog@gmail.com", "password_confirmation"=>"123456", "password"=>"123456", "email"=>"hugo.barauna+nanoblog@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"eff1105f72245127d643296bbfff20a2abda3256"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (31.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (611.9ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'hugo.barauna+nanoblog@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (316.4ms)[0m   [0;1mINSERT INTO `users` (`salt`, `updated_at`, `hashed_password`, `email`, `created_at`) VALUES('H9ndfE6k56', '2009-02-02 16:51:56', '650d03c1c71ea27d9e56ebac7cabc565735962f6', 'hugo.barauna+nanoblog@gmail.com', '2009-02-02 16:51:56')[0m
+  [4;35;1mSQL (588.8ms)[0m   [0mCOMMIT[0m
+
+
+ActionView::TemplateError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]) on line #3 of app/views/notification/new_account.erb:
+1: Welcome to Nanoblogs, <%= @user.email %>
+2: 
+3: Your page is <%= user_url(@user) %>
+4: 
+5: =D
+
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/url_rewriter.rb&line=138&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/url_rewriter.rb:138:in `url_for'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/url_helper.rb&line=85&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/url_helper.rb:85:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/url_helper.rb&line=85&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/url_helper.rb:85:in `url_for'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/(eval)&line=16&column=1">(eval):16:in `user_url'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/views/notification/new_account.erb&line=3&column=1">app/views/notification/new_account.erb:3</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb&line=73&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=256&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=564&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:564:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=552&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:552:in `render_message'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=496&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:496:in `create!'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=455&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:455:in `initialize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=392&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:392:in `new'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=392&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:392:in `method_missing'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/controllers/users_controller.rb&line=18&column=1">app/controllers/users_controller.rb:18:in `create'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1253&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1253&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=617&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=610&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/benchmark.rb&line=293&column=1">/usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb&line=136&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=13&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb&line=34&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb&line=8&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=12&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=606&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb&line=134&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=392&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=183&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=110&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=123&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=132&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb&line=76&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb&line=74&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb&line=74&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=159&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=158&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=158&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=285&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=285&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=285&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=285&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=268&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=268&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb&line=268&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb&line=282&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb&line=281&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb&line=281&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails&line=128&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb&line=212&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails&line=281&column=1">/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=142&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=142&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=521&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=142&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb&line=64&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=521&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb&line=49&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/script/server&line=3&column=1">script/server:3</a>
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (294.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (112.3ms)
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (102.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (34.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (366.3ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Columns (306.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-02 14:58:30) [GET]
+  [4;36;1mSQL (61.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (185.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1529.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-02 15:43:05) [GET]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-02 15:49:06) [GET]
+  [4;36;1mSQL (84.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (42.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (467.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 894ms (View: 124, DB: 595) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-02-02 15:59:09) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (19.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 377ms (View: 115, DB: 23) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-02-02 15:59:10) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 120ms (View: 52, DB: 2) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-02-02 16:13:25) [POST]
+  Parameters: {"user"=>{"email_confirmation"=>"hugo.barauna+nanoblog@gmail.com", "password_confirmation"=>"123456", "password"=>"123456", "email"=>"hugo.barauna+nanoblog@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"d94495944e5dbd7138b2f9a43329d81bc359f769"}
+  [4;35;1mSQL (203.9ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (72.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (341.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (256.4ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (33.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'hugo.barauna+nanoblog@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (130.3ms)[0m   [0mINSERT INTO `users` (`salt`, `updated_at`, `hashed_password`, `email`, `created_at`) VALUES('9L3COmLFtI', '2009-02-02 18:15:22', '726b0c58607ef43f47b9c201c50944903660c5c3', 'hugo.barauna+nanoblog@gmail.com', '2009-02-02 18:15:22')[0m
+  [4;36;1mSQL (103.8ms)[0m   [0;1mROLLBACK[0m
+
+
+ActionView::TemplateError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]) on line #3 of app/views/notification/new_account.erb:
+1: Welcome to <b>Nanoblog</b>, <%= @user.email %>
+2: 
+3: Your page is <%= user_url @user %>
+4: 
+5: =D
+
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/url_rewriter.rb&line=138&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/url_rewriter.rb:138:in `url_for'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/url_helper.rb&line=85&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/url_helper.rb:85:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/url_helper.rb&line=85&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/url_helper.rb:85:in `url_for'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/(eval)&line=16&column=1">(eval):16:in `user_url'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/views/notification/new_account.erb&line=3&column=1">app/views/notification/new_account.erb:3</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb&line=73&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb&line=256&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=564&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:564:in `render'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=552&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:552:in `render_message'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=496&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:496:in `create!'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=455&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:455:in `initialize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=392&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:392:in `new'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb&line=392&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:392:in `method_missing'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/models/user.rb&line=69&column=1">app/models/user.rb:69:in `send_new_account_notification'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb&line=178&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:178:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb&line=178&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:178:in `evaluate_method'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb&line=166&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:166:in `call'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb&line=93&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:93:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb&line=92&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:92:in `each'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb&line=92&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:92:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb&line=92&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:92:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb&line=277&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:277:in `run_callbacks'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/callbacks.rb&line=315&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/callbacks.rb:315:in `callback'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/callbacks.rb&line=238&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/callbacks.rb:238:in `create_without_timestamps'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/timestamp.rb&line=29&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/timestamp.rb:29:in `create'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb&line=2699&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2699:in `create_or_update_without_callbacks'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/callbacks.rb&line=222&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/callbacks.rb:222:in `create_or_update'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb&line=2383&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2383:in `save_without_validation'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/validations.rb&line=1009&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/validations.rb:1009:in `save_without_dirty'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/dirty.rb&line=79&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/dirty.rb:79:in `save_without_transactions'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb&line=179&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb:179:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb&line=179&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb:179:in `with_transaction_returning_status'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/database_statements.rb&line=66&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `transaction'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb&line=129&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb:129:in `transaction'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb&line=138&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb:138:in `transaction'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb&line=178&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb:178:in `with_transaction_returning_status'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb&line=146&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb:146:in `save'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb&line=158&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb:158:in `rollback_active_record_state!'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb&line=146&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/transactions.rb:146:in `save'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/app/controllers/users_controller.rb&line=15&column=1">app/controllers/users_controller.rb:15:in `create'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1253&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=1253&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=617&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=610&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/benchmark.rb&line=293&column=1">/usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb&line=68&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb&line=136&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=13&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb&line=34&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb&line=8&column=1">/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb&line=12&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=524&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb&line=606&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb&line=134&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb&line=392&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=183&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=110&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=123&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=122&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=132&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb&line=39&column=1">/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=103&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=74&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/httpserver.rb&line=104&column=1">/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/httpserver.rb&line=65&column=1">/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=173&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=162&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=162&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=95&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=92&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=92&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=23&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/1.8/webrick/server.rb&line=82&column=1">/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb&line=60&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb&line=66&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=521&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb&line=153&column=1">/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb&line=49&column=1">/home/george/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'</a>
+    <a href="txmt://open?url=file:///usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb&line=31&column=1">/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'</a>
+    <a href="txmt://open?url=file:///home/george/projects/nanoblog/script/server&line=3&column=1">script/server:3</a>
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (352.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (46.9ms)
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-02-02 16:18:16) [POST]
+  Parameters: {"user"=>{"email_confirmation"=>"hugo.barauna++nanoblog@gmail.com", "password_confirmation"=>"112345", "password"=>"123456", "email"=>"hugo.barauna++nanoblog@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"d94495944e5dbd7138b2f9a43329d81bc359f769"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'hugo.barauna++nanoblog@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 397ms (View: 50, DB: 4) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-02-02 16:18:26) [POST]
+  Parameters: {"user"=>{"email_confirmation"=>"hugo.barauna++nanoblog@gmail.com", "password_confirmation"=>"123456", "password"=>"123456", "email"=>"hugo.barauna++nanoblog@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"d94495944e5dbd7138b2f9a43329d81bc359f769"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'hugo.barauna++nanoblog@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO `users` (`salt`, `updated_at`, `hashed_password`, `email`, `created_at`) VALUES('OkN4KSjyom', '2009-02-02 18:18:26', '6f2fe45351b8b39d4564dfea885b49935b7c5803', 'hugo.barauna++nanoblog@gmail.com', '2009-02-02 18:18:26')[0m
+Sent mail to hugo.barauna++nanoblog@gmail.com
+
+Date: Mon, 2 Feb 2009 16:18:26 -0200
+From: nanoblog@nanoblog.com
+To: hugo.barauna++nanoblog@gmail.com
+Subject: Welcome to Nanoblog
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Welcome to <b>Nanoblog</b>, hugo.barauna++nanoblog@gmail.com
+
+Your page is http://localhost:3000/users/9
+
+=D
+  [4;35;1mSQL (8.1ms)[0m   [0mCOMMIT[0m
+Redirected to /home
+Completed in 8362ms (DB: 12) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-02 16:18:35) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (45.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;36;1mPost Columns (28.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mJoin Table Columns (31.7ms)[0m   [0mSHOW FIELDS FROM `followers`[0m
+  [4;36;1mUser Load (67.7ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.followed_id WHERE (`followers`.follower_id = 9 ) [0m
+  [4;35;1mPost Load (38.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 9) ORDER BY created_at DESC[0m
+Completed in 412ms (View: 276, DB: 50) | 200 OK [http://localhost/home]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-02 16:19:22) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+Redirected to /account/login
+Completed in 31ms (DB: 3) | 302 Found [http://localhost/account/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-02 16:19:23) [GET]
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 112ms (View: 52, DB: 4) | 200 OK [http://localhost/account/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-02-02 16:19:27) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 70ms (View: 26, DB: 2) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-02-02 16:19:44) [POST]
+  Parameters: {"user"=>{"email_confirmation"=>"hugo.barauna+++nanoblog@gmail.com", "password_confirmation"=>"123456", "password"=>"123456", "email"=>"hugo.barauna+++nanoblog@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"d94495944e5dbd7138b2f9a43329d81bc359f769"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'hugo.barauna+++nanoblog@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (20.0ms)[0m   [0mINSERT INTO `users` (`salt`, `updated_at`, `hashed_password`, `email`, `created_at`) VALUES('6OKIObvkJO', '2009-02-02 18:19:45', '54e3b4c622bab5f1cd5dbfeb671aad604fa076b1', 'hugo.barauna+++nanoblog@gmail.com', '2009-02-02 18:19:45')[0m
+Sent mail to hugo.barauna+++nanoblog@gmail.com
+
+Date: Mon, 2 Feb 2009 16:19:45 -0200
+From: nanoblog@nanoblog.com
+To: hugo.barauna+++nanoblog@gmail.com
+Subject: Welcome to Nanoblog
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Welcome to <b>Nanoblog</b>, hugo.barauna+++nanoblog@gmail.com <br />
+
+Your page is http://localhost:3000/users/10 <br />
+
+=D
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to /home
+Completed in 2650ms (DB: 41) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-02 16:19:47) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mJoin Table Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `followers`[0m
+  [4;35;1mUser Load (18.5ms)[0m   [0mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.followed_id WHERE (`followers`.follower_id = 10 ) [0m
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 10) ORDER BY created_at DESC[0m
+Completed in 117ms (View: 68, DB: 3) | 200 OK [http://localhost/home]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-02 16:20:54) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;36;1mJoin Table Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `followers`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.followed_id WHERE (`followers`.follower_id = 10 ) [0m
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (73.3ms)[0m   [0mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 10) [0m
+Completed in 481ms (View: 401, DB: 3) | 200 OK [http://localhost/users/10]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-02 16:23:20) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mSQL (8.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 10) [0m
+Completed in 87ms (View: 35, DB: 11) | 200 OK [http://localhost/users/10]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-02 16:23:30) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mJoin Table Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `followers`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.followed_id WHERE (`followers`.follower_id = 10 ) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 10) ORDER BY created_at DESC[0m
+Completed in 100ms (View: 51, DB: 3) | 200 OK [http://localhost/home]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-02 16:31:17) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (25.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (70.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mJoin Table Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `followers`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.followed_id WHERE (`followers`.follower_id = 10 ) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 10) ORDER BY created_at DESC[0m
+Completed in 1401ms (View: 478, DB: 119) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:31:33) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+  [4;36;1mPost Load (37.7ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering posts/index
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (56.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.4ms)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (5.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (3.7ms)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (5.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+Completed in 348ms (View: 184, DB: 65) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:32:29) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering posts/index
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (19.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (5.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (5.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+Completed in 418ms (View: 142, DB: 60) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-02 16:32:47) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+Redirected to /
+Completed in 26ms (DB: 5) | 302 Found [http://localhost/account/logout]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:32:47) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Redirected to /account/login
+Filter chain halted as [:required_login] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-02 16:32:47) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 71ms (View: 33, DB: 2) | 200 OK [http://localhost/account/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-02-02 16:37:28) [POST]
+  Parameters: {"user"=>{"password"=>"123456", "email"=>"hugo.barauna@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"d94495944e5dbd7138b2f9a43329d81bc359f769"}
+  [4;35;1mSQL (45.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (9.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (118.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (108.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'hugo.barauna@gmail.com') LIMIT 1[0m
+Redirected to /
+Completed in 440ms (DB: 320) | 302 Found [http://localhost/account/session]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:37:29) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering posts/index
+  [4;36;1mPost Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (135.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (19.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (28.1ms)
+  [4;35;1mUser Load (6.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (11.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (38.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.2ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (7.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (188.5ms)
+Completed in 1187ms (View: 611, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-02 16:38:09) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Redirected to /
+Completed in 79926ms (DB: 5) | 302 Found [http://localhost/account/logout]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:39:29) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Redirected to /account/login
+Filter chain halted as [:required_login] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-02 16:39:29) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 233ms (View: 33, DB: 2) | 200 OK [http://localhost/account/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-02-02 16:40:22) [POST]
+  Parameters: {"user"=>{"password"=>"123456", "email"=>"hugo.barauna@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"d94495944e5dbd7138b2f9a43329d81bc359f769"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'hugo.barauna@gmail.com') LIMIT 1[0m
+Redirected to /
+Completed in 92ms (DB: 12) | 302 Found [http://localhost/account/session]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:40:23) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering posts/index
+  [4;35;1mPost Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (22.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (6.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (4.9ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (6.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+Completed in 389ms (View: 173, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-02 16:40:26) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Redirected to /
+Completed in 4772ms (DB: 3) | 302 Found [http://localhost/account/logout]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:40:31) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering posts/index
+  [4;35;1mPost Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (39.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (5.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (6.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+Completed in 380ms (View: 188, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-02 16:40:38) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 76ms (View: 24, DB: 2) | 200 OK [http://localhost/account/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-02-02 16:40:49) [POST]
+  Parameters: {"user"=>{"password"=>"123456", "email"=>"hugo.barauna@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"d94495944e5dbd7138b2f9a43329d81bc359f769"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'hugo.barauna@gmail.com') LIMIT 1[0m
+Redirected to /
+Completed in 89ms (DB: 6) | 302 Found [http://localhost/account/session]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:40:49) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering posts/index
+  [4;35;1mPost Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (16.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (5.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (6.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (7.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+Completed in 406ms (View: 173, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-02 16:44:22) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Redirected to /account/login
+Filter chain halted as [:required_login] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/account/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-02 16:44:22) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 334ms (View: 23, DB: 2) | 200 OK [http://localhost/account/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-02-02 16:44:28) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 106ms (View: 48, DB: 2) | 200 OK [http://localhost/users/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-02 16:44:30) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 235ms (View: 28, DB: 2) | 200 OK [http://localhost/account/login]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:45:39) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Load (11.3ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering posts/index
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (45.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (5.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (6.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (4.3ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (6.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+Completed in 250ms (View: 189, DB: 14) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-02-02 16:45:56) [GET]
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering user_sessions/new
+Completed in 84ms (View: 27, DB: 7) | 200 OK [http://localhost/account/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-02-02 16:46:05) [POST]
+  Parameters: {"user"=>{"password"=>"123456", "email"=>"hugo.barauna@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"5b1dd8504e48fa49281611cfb4eb531350d45f2f"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'hugo.barauna@gmail.com') LIMIT 1[0m
+Redirected to /home
+Completed in 69ms (DB: 8) | 302 Found [http://localhost/account/session]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-02-02 16:46:06) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/default
+Rendering users/home
+  [4;35;1mPost Columns (19.1ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mJoin Table Columns (48.7ms)[0m   [0;1mSHOW FIELDS FROM `followers`[0m
+  [4;35;1mUser Load (1051.4ms)[0m   [0mSELECT * FROM `users` INNER JOIN `followers` ON `users`.id = `followers`.followed_id WHERE (`followers`.follower_id = 1 ) [0m
+  [4;36;1mPost Load (112.6ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 4) ORDER BY created_at DESC[0m
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.user_id = 6) ORDER BY created_at DESC[0m
+  [4;36;1mPost Load (1.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 1) ORDER BY created_at DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (159.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (7.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (6.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (4.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (6.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.4ms)
+Completed in 1805ms (View: 1745, DB: 3) | 200 OK [http://localhost/home]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-02-02 16:46:11) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Redirected to /
+Completed in 28ms (DB: 3) | 302 Found [http://localhost/account/logout]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:46:11) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering posts/index
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (198.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (6.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (6.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (7.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+Completed in 398ms (View: 347, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-02-02 16:46:31) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (7.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendering template within layouts/default
+Rendering users/show
+  [4;36;1mPost Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (80.3ms)[0m   [0mSELECT count(*) AS count_all FROM `posts` WHERE (`posts`.user_id = 4) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.user_id = 4) ORDER BY created_at DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (8.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+Completed in 495ms (View: 249, DB: 10) | 200 OK [http://localhost/users/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-02 16:50:52) [GET]
+  [4;35;1mSQL (2.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/default
+Rendering posts/index
+  [4;36;1mPost Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (574.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (5.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered posts/_post (4.2ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (5.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (4.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (3.1ms)
+Completed in 779ms (View: 740, DB: 3) | 200 OK [http://localhost/]

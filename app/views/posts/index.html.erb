@@ -1,25 +1,6 @@
-<h1>Posts:</h1>
+<h1>Nanoblog's Posts:</h1>
 
-<h3>What are you doing man?</h2>
-<% form_for(@post) do |f| %>
-  <%= f.error_messages %>
+<div id="posts">
+  <%= render :partial => @posts %>
+</div>
 
-  <p>
-    <%= f.text_area :body, :size => '60x4' %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
-
-<ul>
-<% for post in @posts %>
-    <li>
-      <%= h(post.body) %>, posted at <%= time_ago_in_words(post.created_at) %>
-    </li>
-<% end %>
-</ul>
-
-<br />
-
-<%= link_to 'New post', new_post_path %>
