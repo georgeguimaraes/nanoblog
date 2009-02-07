@@ -2,10 +2,10 @@
 module ApplicationHelper
 
   def show_flash_messages
-    if flash[:notice]
-      "<p style=\"color: green\">#{flash[:notice]}</p>"
-    elsif flash[:error]
-      "<p style=\"color: red\">#{flash[:error]}</p>" 
+    if flash[:error]
+      "<p style=\"color: red\">#{flash[:error]}</p>"
+    elsif flash[:notice]
+      "<p style=\"color: green\">#{flash[:notice]}</p>" 
     end
   end
 

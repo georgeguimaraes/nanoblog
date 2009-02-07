@@ -23,8 +23,7 @@ class User < ActiveRecord::Base
      
     posts.flatten.sort { |post1,post2| post2.created_at <=> post1.created_at }
   end
-  
-  
+
   def password
     @password || ''
   end

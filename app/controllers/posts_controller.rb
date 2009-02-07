@@ -21,10 +21,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.xml
   def create
-    #TODO dar uma olhada nisso aqui depois
-#    @post = @current_user.posts.build(params[:post])
-    @post = Post.new(params[:post])
-    @post.user_id = @current_user.id
+    @post = @current_user.posts.build(params[:post])
 
     respond_to do |format|
       if @post.save

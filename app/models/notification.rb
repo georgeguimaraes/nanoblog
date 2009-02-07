@@ -1,5 +1,4 @@
 class Notification < ActionMailer::Base
-  
 
   def new_account(user, sent_at = Time.now)
     subject       'Welcome to Nanoblog'
