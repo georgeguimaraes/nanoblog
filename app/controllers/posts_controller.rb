@@ -5,6 +5,11 @@ class PostsController < ApplicationController
 #    @posts = Post.find(:all, :order => "created_at DESC")
 #    @posts = Post.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
     @posts = Post.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
+
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @posts}
+    end
   end
 
   # GET /posts/new

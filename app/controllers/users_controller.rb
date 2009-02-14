@@ -28,6 +28,12 @@ class UsersController < ApplicationController
   
   # GET /home
   def home
+    @posts = @current_user.followeds_posts
+    
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @posts}
+    end
   end
-  
+
 end

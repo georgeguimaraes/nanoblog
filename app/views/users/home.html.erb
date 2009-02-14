@@ -13,8 +13,8 @@
 <% end %>
 
 
-<% unless @current_user.followeds_posts.empty? %>
+<% unless @posts.empty? %>
   <div id="posts">
-    <%= render :partial => @current_user.followeds_posts %>
+    <%= render :partial => @posts %>
   </div>
 <% end %>

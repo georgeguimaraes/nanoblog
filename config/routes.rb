@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-
   map.root :controller => 'posts', :action => 'index'
 
-  map.user_home '/home', :controller => 'users', :action => 'home'
+  map.with_options(:controller => 'users', :action => 'home') do |m|
+    m.user_home 'home'
+    m.formatted_user_home 'home.:format'
+  end
 
   map.resources :users, :only => [ :show, :new, :create ] do |users|
     users.resources :posts
